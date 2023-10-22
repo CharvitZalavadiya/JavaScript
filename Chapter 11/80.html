@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 11</div>
+    <div class="topic">Method Overriding With Constructor</div>
+    <script>
+        class employee {
+            constructor(name) {          // this constructor will automatically inherited to it's derived class developer using super keyword
+                console.log(`${name} is the employee ( constructor in employee class )`)
+                this.name = name
+            }
+
+            // enter() {
+            //     console.log(`Employee is entered <--`)
+            // }
+
+            // exit() {
+            //     console.log(`Employee is exited -->`)
+            // }
+
+            leave(l) {
+                console.log(`Employee has requested ${l} leaves ^_^`)
+            }
+        }
+
+        class developer extends employee {
+            constructor(name) {             // overriding the constructor
+                super(name)               // it must be call for used the constructor of parent class into derived class
+                console.log(`${name} is the developer ( constructor in developer class )`)
+            }
+
+            // salary(s) {
+            //     console.log(`Developer needs ${s} salary`)
+            // }
+
+            // leave(l){
+            //     console.log(`Employee has requested ${l+5} leaves ^_^ ( method overriding with extra 5 leave )`)
+            // }
+
+            leave(l) {
+                super.leave(10)
+                console.log(`Extra 5 leaves using super keyword`)
+            }
+        }
+
+        // let e1=new employee()
+        let d1 = new developer("cz")
+
+        // e1.enter()
+        // e1.exit()
+        // e1.leave(5)
+
+        // console.log(`\n`)
+
+        // d1.enter()
+        // d1.exit()
+        // d1.salary(5)
+        d1.leave(5)
+
+    </script>
+</body>
+
+</html>

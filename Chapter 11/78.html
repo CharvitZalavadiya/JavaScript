@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 11</div>
+    <div class="topic">Inheritance & Extend Keyword</div>
+    <script>
+        class animal {
+            constructor(name, color) {
+                this.name = name
+                this.color = color
+            }
+
+            run() {
+                console.log(this.name + " is running ...")
+            }
+
+            stand() {
+                console.log(this.name + " is standing !!!")
+            }
+        }
+
+        class monkey extends animal {
+            jump() {
+                console.log(this.name + " is jumping ^^^")
+            }
+        }
+
+        let a1 = new animal("cheetah", "yellow")
+        let m1 = new monkey("vandro", "brown")
+
+        a1.run()
+        a1.stand()
+        m1.jump()
+        m1.run()            // m1 is from monkey class and all the properties of animal class will be inherited to the monkey class because monkey class is a child class of the animal class ( parent class )
+
+    </script>
+</body>
+
+</html>

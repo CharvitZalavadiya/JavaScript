@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 11</div>
+    <div class="topic">Static Methods</div>
+    <script>
+        class animal {
+            constructor(name) {
+                this.name = name
+            }
+
+            run() {
+                console.log(animal.capitalize(this.name) + " is running ...")
+            }
+
+            static capitalize(name) {           // it belongs to the whole class ( static )
+                return name.charAt(0).toUpperCase() + name.substr(1, name.length)
+            }
+        }
+
+        let a1 = new animal("kutta")            // there are 2 ways to use static function
+        a1.run()
+        
+        let a2 = new animal(animal.capitalize("billi"))
+        a2.run()
+    </script>
+</body>
+
+</html>
