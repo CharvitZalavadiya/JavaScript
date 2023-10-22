@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 12 : Advanced JavaScript</div>
+    <div class="topic">Hoisting</div>
+    <script>
+        // hoisting only works when the variable is 'var' not at 'let' and 'const'
+        // same for the functions if the function is arrow function then it will return an error
+
+        console.log(a)          // prints undefined because we are calling variable a before the declaration of it
+
+        hw()            // before function declaration we are calling that function and still we are not getting the error because of hoisting in js
+        function hw() {          // hoisting also works with variables same as functions
+            console.log("hello world !")
+        }
+
+        var a = 10
+
+        console.log(a)          // gives 10
+    </script>
+</body>
+
+</html>

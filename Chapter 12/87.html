@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: auto;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 12 : Advanced JavaScript</div>
+    <div class="topic">Destructuring assignment and Spread Operator</div>
+    <script>
+        let arr = [1, 4, 6, 7, 9, 0, 3, 2, 5]
+        // let [a, b, c, d, ...rest] = arr         // here 1st 4 element will be in a, b, c, d then rest means all other element will be in an array
+        // console.log(a, b, c, d, rest)
+
+        // let [a, , , , ...rest] = arr            // rest will start from 9 to 5 and 4,6,7 will be droped
+        // console.log(a, rest)
+
+        let { a, b } = { a: 1, b: 5 }
+        let arr1 = [3, 5, 6]
+        let obj1 = { ...arr1 }          // turns into key and value form
+        console.log(obj1)
+
+        function mlt(v1, v2, v3) {
+            return v1 * v2 * v3
+        }
+
+        console.log(mlt(...arr1))
+    </script>
+</body>
+
+</html>
