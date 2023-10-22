@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 30vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 40vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 10</div>
+    <div class="topic">POST Request</div>
+    <script>
+        const abc=async()=>{
+            let opt = {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    title: "c",
+                    body: "z",
+                    userId: 1,
+                }),
+            }
+    
+            let p=await fetch('https://jsonplaceholder.typicode.com/posts', opt)
+            let response=await p.json()
+            return response
+        }
+        const main=async ()=>{
+            let z=await abc()
+            console.log(z)
+        }
+        main()
+        
+    </script>
+</body>
+
+</html>

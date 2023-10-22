@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 30vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 40vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 10</div>
+    <div class="topic">Fetch API</div>
+    <script>
+        let a=fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m")          // when we fetch any api then it returns a promise so here variable a is promise
+        a.then((val1)=>{
+            console.log(val1.status)            // for true status will be between (HTTP status code) 200-299 or else it will be false
+            console.log(val1.ok)            // if the api fetches successfully then it will show true else false
+            return val1.json()
+        }).then((val2)=>{           // if the api did not fetch properly then you can take other action that's why here we have used 2nd .then() function
+            console.log(val2)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 30vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 40vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 10</div>
+    <div class="topic">Cookies</div>
+    <script>
+        // console.log(document.cookie)
+        document.cookie = "ck=123"            // when we do document.cookie then it add the cookie on that page and never replace any cookie here 123 is add into the coockie which name is 'ck'
+        document.cookie = "ck1=456"            // here 456 is added into the cookie named ck1
+        document.cookie = "ck=789"            // here the data of cookie named ck is updated from 123 to 789
+
+        let key=prompt("enter key")
+        let value=prompt("enter value")
+        // document.cookie=`${key}=${value}`           // when you enter any special character in key or in value then it will not be taken
+        document.cookie=`${encodeURIComponent(key)}=${encodeURIComponent(value)}`           // so to resolve above problem we write the code in this type so that key and value can have special characters
+
+        console.log(document.cookie)        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: aqua;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+        }
+
+        .chapter {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 30vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topic {
+            border: 3px solid yellow;
+            border-radius: 15px;
+            width: 40vw;
+            height: 10vh;
+            margin: 10px 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chapter">Chapter 10</div>
+    <div class="topic">Local Storage</div>
+    <script>
+       localStorage.setItem("name","cz")            // if we refresh the page or reload the link then also local storage will not destroy (key and value will be present there)
+       localStorage.setItem("a","1")
+       localStorage.setItem("b","2")
+       localStorage.setItem("c","3")
+       localStorage.setItem("d","4")
+
+    //    let key=prompt("Enter key")
+    //    let value=prompt("Enter value")
+    //    console.log(`key = ${key} and value = ${value}`)
+    //    localStorage.setItem(key,value)
+
+    //    if(key == "asd" || value == "fgh"){
+    //     localStorage.removeItem(key)
+    //    }
+
+    //    if (key == "123"){
+    //     localStorage.clear()
+    //    }
+
+       console.log(localStorage.key(0))
+       console.log(localStorage.key(2))
+       console.log(localStorage.key(3))
+
+       window.onstorage=(e)=>{          // this property is used when you change value of the key in main tab and when you go to your second tab then it will print below sentence in console of that second same tab
+        console.log("something changed in local storage")
+        console.log(e)
+       }
+
+    </script>
+</body>
+
+</html>
